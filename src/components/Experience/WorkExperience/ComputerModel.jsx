@@ -10,23 +10,8 @@ import GlassMaterialStandard from '../Common/GlassMaterialStandard';
 function ComputerModel(props) {
   const ref = useRef();
   // const model = useGLTF(
-  const { nodes } = useGLTF(
-    '/models/computer-merged.glb'
-    // 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Suzanne/glTF/Suzanne.gltf'
-  );
-  console.log(nodes);
-  // let geometries = [];
-  // for (const node in nodes) {
-  //   // if (nodes[node].type === 'Mesh') geometries.push(nodes[node].geometry);
-  //   if (nodes[node].type === 'Mesh') {
-  //     const geometry = nodes[node].geometry;
-  //     // geometry.scale(0.15, 0.15, 0.15);
-  //     // geometry.rotateX(Math.PI / 2);
-  //     geometries.push(geometry);
-  //   }
-  // }
-  // console.log(geometries);
-  // spinning the model when user uses mouse wheel
+  const { nodes } = useGLTF('/models/computer-merged.glb');
+
   const handleWheel = (e) => {
     ref.current.rotation.z -= e.deltaY / 100;
   };

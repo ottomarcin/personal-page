@@ -1,6 +1,6 @@
-# My personal page/portfolio
+# Overview
 
-Hey, I'm Marcin Otto and welcome to my portfolio! Explore it to get to know me or dive into the code to learn about my coding skills. Hope you enjoy it!
+Hey, I'm Marcin Otto and welcome to my personal page! Check [live version](http://ottomarcin.github.io/personal-page/) to get to know me or dive into the code. Hope you enjoy it!
 
 ## Techs
 

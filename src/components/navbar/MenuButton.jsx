@@ -14,10 +14,9 @@ const Button = styled(Link)`
     opacity: 1;
     color: #ffffff;
   }
-  // &.active {
-  //   color: #ffffff;
-  //   font-weight: 400;
-  // }
+  @media (max-width: 55em) {
+    margin-left: 0;
+  }
 `;
 
 function MenuButton(props) {

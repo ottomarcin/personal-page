@@ -12,20 +12,11 @@ function FrameModel(props) {
     '/models/frame.glb'
     // 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Suzanne/glTF/Suzanne.gltf'
   );
-  console.log(model);
   // spinning the model when user uses mouse wheel
   const handleWheel = (e) => {
     ref.current.rotation.z -= e.deltaY / 100;
   };
   useMouseWheel(handleWheel);
-  // useEffect(() => {
-  //   // add listener on wheel on component mounting
-  //   window.addEventListener('wheel', handleWheel);
-  //   return () => {
-  //     // remove listener on wheel on component unmounting
-  //     window.removeEventListener('wheel', handleWheel);
-  //   };
-  // }, []);
 
   // automatically spinning the model when nothing happen
   useFrame((state, delta) => {
@@ -39,7 +30,6 @@ function FrameModel(props) {
       rotation={[Math.PI / 2, 0, 0]}
       scale={[1.5, 1.5, 1.5]}
     >
-      {/* // <mesh ref={ref} position={[1.5, -1, -5]}> */}
       <GlassMaterial />
       <primitive
         attach={'geometry'}

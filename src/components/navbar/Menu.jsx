@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import MenuButton from './MenuButton';
 import { pages } from '../pages/pages';
+import { MobileView } from 'react-device-detect';
 
 // hamburger menu icon
 const Icon = styled.i`
@@ -42,21 +43,9 @@ const MenuOptionsWrapper = styled.ul`
         display: flex;
         flex-direction: column;
         flex-shrink: 1;
-        // background-color: #4f707d;
-        // background: radial-gradient(circle at top right, #4f707d, #4f707d 50px, #eee 100%, #4f707d 100%);
-        // background: radial-gradient(circle at top right, #4f707d 150px, #ffffff 150px, #ffffff 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #b59e82 150px, #4f707d 150px, #8ec9da 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #4f707d 150px, #8ec9da 150px, #b59e82 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #b59e82, #4f707d 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #8ec9da, #402B17 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #402B17, #ffffff 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #0093E9, #8ec9da 100%);//, #eee 100%, #4f707d 10%);
-        // background: radial-gradient(circle at top right, #8ec9da, #80D0C7 100%);//, #eee 100%, #4f707d 10%);
-        // background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-        background: radial-gradient(circle at top right,  #8ec9da 150px, #b59e82 100%);
-        //najlepszy
-        // background: radial-gradient(circle at top right, #0093E9, #80D0C7 100%);//, #eee 100%, #4f707d 10%);
         justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at top right,  #8ec9da 150px, #b59e82 100%);
         position: fixed;
         left: 0;
         width: 100%;
@@ -73,6 +62,24 @@ const MenuOptionsWrapper = styled.ul`
         }
     }
   }
+`;
+
+const MobileCommunicate = styled.div`
+  // background-color: #ffffff;
+  text-align: center;
+  // max-width: 90%;
+  width: 80%;
+  max-width: 80%;
+  position: absolute;
+  bottom: 1em;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid white;
+  align-self: flex-end;
+  font-size: 0.4em;
+  padding: 0.5em;
+  border-radius: 1000px;
 `;
 
 function Menu({ data, toggleMobileMenu, closeMobileMenu, menuOpen }) {
@@ -94,6 +101,13 @@ function Menu({ data, toggleMobileMenu, closeMobileMenu, menuOpen }) {
               />
             );
           })}
+          <MobileView>
+            {menuOpen && (
+              <MobileCommunicate>
+                For best possible experience visit this site on desktop
+              </MobileCommunicate>
+            )}
+          </MobileView>
         </MenuOptionsWrapper>
       </MenuWrapper>
     </MenuWrapperMother>

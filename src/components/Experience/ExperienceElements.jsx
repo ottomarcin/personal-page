@@ -10,6 +10,7 @@ import AboutMe from './AboutMe/AboutMe';
 import Contact from './Contact/Contact';
 import Error404 from './Error404/Error404';
 import { Environment, OrbitControls } from '@react-three/drei';
+import { isDesktop } from 'react-device-detect';
 
 function ExperienceElements(props) {
   /**
@@ -65,11 +66,14 @@ function ExperienceElements(props) {
         zPosition={-20}
         parallaxControlsPower={controlsPower}
       />
-      <ControlsHomeTab
-        mouse={mouse}
-        backgroundRef={backgroundRef.current}
-        power={controlsPower}
-      />
+      {/* turning controls on only on desktop since controls utilizes cursor position to work */}
+      {isDesktop && (
+        <ControlsHomeTab
+          mouse={mouse}
+          backgroundRef={backgroundRef.current}
+          power={controlsPower}
+        />
+      )}
       <Environment
         files={
           '/environmentMaps/warehouse/Warehouse-with-lights-brightened.hdr'

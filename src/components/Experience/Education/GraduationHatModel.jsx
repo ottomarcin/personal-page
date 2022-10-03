@@ -1,9 +1,8 @@
 import { useGLTF } from '@react-three/drei';
 import React from 'react';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import GlassMaterial from '../Common/GlassMaterial';
 import { useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
 import useMouseWheel from '../Common/customHooks/useMouseWheel';
 
 function GraduationHatModel(props) {
@@ -18,16 +17,8 @@ function GraduationHatModel(props) {
     ref.current.rotation.y -= e.deltaY / 100;
   };
   useMouseWheel(handleWheel);
-  // useEffect(() => {
-  //   // add listener on wheel on component mounting
-  //   window.addEventListener('wheel', handleWheel);
-  //   return () => {
-  //     // remove listener on wheel on component unmounting
-  //     window.removeEventListener('wheel', handleWheel);
-  //   };
-  // }, []);
 
-  // automatically spinning the model when nothing happen
+  // spinning the model
   useFrame((state, delta) => {
     ref.current.rotation.y -= delta / 5;
   });

@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
-import React, { useRef } from 'react';
+import React from 'react';
+// eslint-disable-next-line
 import { OrbitControls, useContextBridge } from '@react-three/drei';
 import ExperienceElements from './ExperienceElements';
 import styled from 'styled-components';
@@ -18,7 +19,6 @@ const ThreejsWrapper = styled.div`
 
 function Experience(props) {
   const ContextBridge = useContextBridge(OptionsContext); //passing context content to 3js app
-  const canvasRef = useRef();
   // if pixel ratio equals 1, set it to one, if is greater, set to 2
   const pixelRatio = Math.min(window.devicePixelRatio, 2);
   // antialiasing isnt nessesery if pixel ratio is greater than one, optimization stuff
@@ -39,8 +39,7 @@ function Experience(props) {
       >
         <ContextBridge>
           {/* in order to use r3f hooks i had to break this component down to another one */}
-          {/* more here:  */}
-          {/* <ExperienceElements canvas={canvasRef.current} /> */}
+          {/* experience routing also in ExperienceElements */}
           <ExperienceElements />
         </ContextBridge>
       </Canvas>

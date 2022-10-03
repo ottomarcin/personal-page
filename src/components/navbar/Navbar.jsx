@@ -38,6 +38,13 @@ const Header = styled(Link)`
   font-weight: 400;
 `;
 
+const MobileCommunicate = styled.div`
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 0.5em;
+`;
+
 function Navbar({ header, data }) {
   // header - text to show in upper-left corner of app
   // data - data including options in navbar in form of array of objects of pattern: { text: String, link: String, {...}}

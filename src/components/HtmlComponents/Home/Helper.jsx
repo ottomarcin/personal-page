@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserView } from 'react-device-detect';
 import styled from 'styled-components';
 import Delayed from './Delayed';
 
-const blue = '##4f707d';
+const blue = '#4f707d';
 const brown = '#402b17';
 
 const color = brown;

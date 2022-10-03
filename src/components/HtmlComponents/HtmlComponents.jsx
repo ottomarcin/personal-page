@@ -5,7 +5,7 @@ import AboutMeHtml from './AboutMe/AboutMeHtml';
 import ContactHtml from './Contact/ContactHtml';
 import EducationHtml from './Education/EducationHtml';
 import ExperienceHtml from './Experience/ExperienceHtml';
-import Helper from './Home/Helper';
+import HomeHtml from './Home/HomeHtml';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -20,11 +20,8 @@ function HtmlComponents(props) {
   return (
     <Switch>
       <Route path='/'>
-        <Helper />
+        <HomeHtml />
       </Route>
-      {/* <Route path='/experience'>
-          <Experience />
-        </Route> */}
       <Route path='/about'>
         <AboutMeHtml />
       </Route>
