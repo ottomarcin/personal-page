@@ -6,9 +6,10 @@ import { useThree } from '@react-three/fiber';
 import { useAspect } from '@react-three/drei';
 
 function HomeTextsLayout(props) {
-  const { size, state } = useThree();
+  // const { size } = useThree();
+  const get = useThree((state) => state.get);
   //calculating sizes of screen in scene coodinates
-  const [vpWidth, vpHeight] = useAspect(size.width, size.height);
+  const [vpWidth, vpHeight] = useAspect(get().size.width, get().size.height);
 
   // variable set to control vertical/horizontal alignment od text in the scene
   const [narrowScreen, setNarrowScreen] = useState(false);
@@ -16,9 +17,9 @@ function HomeTextsLayout(props) {
   // when screen width is greater than height, were setting var narrowScreen as false, othrewise true
   // setting it only on sizes change
   useEffect(() => {
-    const state = size.height > size.width ? true : false;
+    const state = get().size.height > get().size.width ? true : false;
     setNarrowScreen(state);
-  }, [size]);
+  }, [get().size]);
   const { pages } = useContext(OptionsContext);
 
   return (

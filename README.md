@@ -8,5 +8,4 @@ Project powered by **React**, using **react-three-fiber** to create all the fanc
 
 ## Special thanks
 
-- to my wonderful girlfriend **Kasia** for her patience with my too many questions about every single feature,
 - to **Bruno Simon** for creating the best Three.js course - [Three.js Journey](https://threejs-journey.com/)

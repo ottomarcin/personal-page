@@ -17,10 +17,13 @@ export default function ForegroundPlaneGeometry(props) {
   );
   return (
     <planeGeometry
+      ref={props.geometryRef}
       args={[
         ...planeSizes,
         props.screenSize.width / 2,
         props.screenSize.height / 2,
+        // props.screenSize.width,
+        // props.screenSize.height,
       ]}
     />
   );

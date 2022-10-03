@@ -41,6 +41,7 @@ const MenuOptionsWrapper = styled.ul`
   @media (max-width: 55em) {
         display: flex;
         flex-direction: column;
+        flex-shrink: 1;
         // background-color: #4f707d;
         // background: radial-gradient(circle at top right, #4f707d, #4f707d 50px, #eee 100%, #4f707d 100%);
         // background: radial-gradient(circle at top right, #4f707d 150px, #ffffff 150px, #ffffff 100%);//, #eee 100%, #4f707d 10%);
@@ -48,7 +49,13 @@ const MenuOptionsWrapper = styled.ul`
         // background: radial-gradient(circle at top right, #4f707d 150px, #8ec9da 150px, #b59e82 100%);//, #eee 100%, #4f707d 10%);
         // background: radial-gradient(circle at top right, #b59e82, #4f707d 100%);//, #eee 100%, #4f707d 10%);
         // background: radial-gradient(circle at top right, #8ec9da, #402B17 100%);//, #eee 100%, #4f707d 10%);
-        background: radial-gradient(circle at top right, #402B17, #ffffff 100%);//, #eee 100%, #4f707d 10%);
+        // background: radial-gradient(circle at top right, #402B17, #ffffff 100%);//, #eee 100%, #4f707d 10%);
+        // background: radial-gradient(circle at top right, #0093E9, #8ec9da 100%);//, #eee 100%, #4f707d 10%);
+        // background: radial-gradient(circle at top right, #8ec9da, #80D0C7 100%);//, #eee 100%, #4f707d 10%);
+        // background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        background: radial-gradient(circle at top right,  #8ec9da 150px, #b59e82 100%);
+        //najlepszy
+        // background: radial-gradient(circle at top right, #0093E9, #80D0C7 100%);//, #eee 100%, #4f707d 10%);
         justify-content: center;
         position: fixed;
         left: 0;

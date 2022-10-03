@@ -13,13 +13,10 @@ export default function BackgroundShaderMaterial(props) {
     props.zPosition
   );
 
-  useEffect(() => {
-    console.log(props.initialTime);
-  }, []);
   //uniforms - variables for shaders
   const uniforms = useMemo(
     () => ({
-      uTime: { value: props.initialTime },
+      uTime: { value: props.time },
       uBackgroundMultiplier: {
         value: backgroundPatternMultiplier,
       },
@@ -37,12 +34,16 @@ export default function BackgroundShaderMaterial(props) {
     []
   );
 
-  //every frame time is being updated
-  useFrame((state, delta) => {
-    // console.log(delta);
-    // https://github.com/pmndrs/react-three-fiber/discussions/1991
-    uniforms.uTime.value += delta * 1000;
-  });
+  // //every frame time is being updated
+  // useFrame((state, delta) => {
+  //   // console.log(delta);
+  //   // https://github.com/pmndrs/react-three-fiber/discussions/1991
+  //   uniforms.uTime.value += delta * 1000;
+  // });
+
+  useEffect(() => {
+    uniforms.uTime.value = props.time;
+  }, [props.time]);
 
   return (
     <shaderMaterial

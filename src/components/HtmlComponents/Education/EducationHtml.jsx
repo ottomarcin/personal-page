@@ -1,32 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import educationCopies from '../educationCopies';
+import educationCopies from './educationCopies';
 import DegreeInfo from './DegreeInfo';
-
-const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  z-index: 3;
-  text-align: center;
-`;
-
-const NavbarPhantom = styled.div`
-  top: 0;
-  height: 100px;
-  width: 100vw;
-  flex-shrink: 0;
-`;
-
-const TitlePhantom = styled.div`
-  // min-height: 0px;
-  height: 15vh;
-  // height: 100px;
-  width: 100vw;
-  flex-shrink: 0;
-`;
+import NavbarTitleOffset from '../Common/NavbarTitleOffset';
+import WholePageWrapper from '../Common/WholePageWrapper';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -49,9 +26,8 @@ const EducationEntriesWrapper = styled.div`
 
 function EducationHtml(props) {
   return (
-    <Wrapper>
-      <NavbarPhantom />
-      <TitlePhantom />
+    <WholePageWrapper>
+      <NavbarTitleOffset />
       <ContentWrapper>
         <SideFiller />
         <EducationEntriesWrapper>
@@ -61,7 +37,7 @@ function EducationHtml(props) {
         </EducationEntriesWrapper>
         <SideFiller />
       </ContentWrapper>
-    </Wrapper>
+    </WholePageWrapper>
   );
 }
 

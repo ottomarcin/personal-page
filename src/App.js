@@ -2,8 +2,8 @@
 import { Switch, Route } from 'wouter';
 import './App.css';
 import Navbar from './components/navbar/Navbar';
-import Home from './components/Experience/HomeTab/Home';
-import Education from './components/Experience/EducationTab/Education';
+import Home from './components/Experience/Home/Home';
+import Education from './components/Experience/Education/Education';
 import AboutMe from './components/pages/AboutMe';
 // import Education from './components/pages/Education';
 import Contact from './components/pages/Contact';
@@ -11,6 +11,8 @@ import styled from 'styled-components';
 import React from 'react';
 import { pages } from './components/pages/pages';
 import OptionsContext from './context/optionsContext';
+import Experience from './components/Experience/Experience';
+import HtmlComponents from './components/HtmlComponents/HtmlComponents';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -27,12 +29,14 @@ function App() {
     <OptionsContext.Provider value={{ pages: pages }}>
       <AppWrapper>
         <Navbar header={'Marcin Otto'} data={pagesInOrder} />
-        <Switch>
+        <Experience />
+        <HtmlComponents />
+        {/* <Switch>
           <Route path='/'>
             <Home />
           </Route>
           <Route path='/experience'>
-            <Home />
+            <Experience />
           </Route>
           <Route path='/about'>
             <AboutMe />
@@ -43,7 +47,7 @@ function App() {
           <Route path='/contact'>
             <Contact />
           </Route>
-        </Switch>
+        </Switch> */}
       </AppWrapper>
     </OptionsContext.Provider>
   );

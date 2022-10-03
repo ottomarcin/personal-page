@@ -34,6 +34,10 @@ const content = [
       { text: 'MS Kinect', color: '#6549b7' },
     ],
   },
+  {
+    title: 'The most important thing I learned at the university',
+    description: `During my time at the university I faced a great variety of projects - calculating inversed kinematics formula for three joints robot and simulating it in Matlab, building and programming self-driving arduino based robot, designing automatic tool changing device for milling machine and modeling it in Solidworks, simulating fluids flow in Ansys and many, many others. But the most important skill I got during all these years of learning was the ability to solve the problems. Every new project grew my confidence, that any task is possible to resolve, it only gets some time to research and persistency not to give up. `,
+  },
 ];
 
 export default content;

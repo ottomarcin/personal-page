@@ -4,41 +4,40 @@ import { useRef, useEffect } from 'react';
 import GlassMaterial from '../Common/GlassMaterial';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import useMouseWheel from '../Common/customHooks/useMouseWheel';
 
-function GraduationHatModel(props) {
+function ContactModel(props) {
   const ref = useRef();
   const model = useGLTF(
-    '/models/hat.glb'
+    // '/models/mailbox.glb'
+    '/models/phone.glb'
     // 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Suzanne/glTF/Suzanne.gltf'
   );
+  console.log(model);
 
   // spinning the model when user uses mouse wheel
   const handleWheel = (e) => {
-    ref.current.rotation.y -= e.deltaY / 100;
+    ref.current.rotation.y += e.deltaY / 100;
   };
-  useEffect(() => {
-    // add listener on wheel on component mounting
-    window.addEventListener('wheel', handleWheel);
-    return () => {
-      // remove listener on wheel on component unmounting
-      window.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
+  useMouseWheel(handleWheel);
 
   // automatically spinning the model when nothing happen
   useFrame((state, delta) => {
-    ref.current.rotation.y -= delta / 5;
+    ref.current.rotation.y += delta / 5;
   });
 
   return (
-    <mesh ref={ref} position={[1.5, -1, -5]} scale={[10, 10, 10]}>
+    // <></>
+    <mesh
+      ref={ref}
+      rotation={[0, -Math.PI / 4, 0]}
+      position={[1.5, -0.5, -5]}
+      scale={[0.1, 0.1, 0.1]}
+    >
       <GlassMaterial />
-      <primitive
-        attach={'geometry'}
-        object={model.nodes.mortarboard.geometry}
-      />
+      <primitive attach={'geometry'} object={model.nodes.phone.geometry} />
     </mesh>
   );
 }
 
-export default GraduationHatModel;
+export default ContactModel;

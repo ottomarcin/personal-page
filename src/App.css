@@ -5,7 +5,6 @@
   font-family: 'Lato', sans-serif;
   /* not letting browsers on mac/ios to 'overscroll' */
   overscroll-behavior-y: none;
-  z-index: 0;
 }
 
 .main {

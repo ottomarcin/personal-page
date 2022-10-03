@@ -16,12 +16,12 @@ export default function BackgroundPlaneGeometry(props) {
   return <planeGeometry args={planeSizes} />;
 }
 
-const calculateSizes = (camera, bgZPosition) => {
-  //calculating size of plane based on tangent of cam's fov and
-  //distance from optical center of cam to background plane
-  const { width, height } = calcPlaneSizesAtZOffset(
-    camera.position.z + Math.abs(bgZPosition),
-    camera
-  );
-  return [width, height];
-};
+// const calculateSizes = (camera, bgZPosition) => {
+//   //calculating size of plane based on tangent of cam's fov and
+//   //distance from optical center of cam to background plane
+//   const { width, height } = calcPlaneSizesAtZOffset(
+//     camera.position.z + Math.abs(bgZPosition),
+//     camera
+//   );
+//   return [width, height];
+// };

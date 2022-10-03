@@ -8,6 +8,7 @@ function MouseParallaxControls(props) {
   // they used useFrame to react on mouse move, but i think more performant is onmousemove
   // event, because it doenst try to change positions of cam and background all over
   useEffect(() => {
+    console.log('mousemove');
     // every time mouse moves, we're setting camera position
     // according to mouse position and controls power
     camera.position.set(

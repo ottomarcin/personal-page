@@ -7,7 +7,7 @@ import Background from '../Common/Background/Background';
 import HomeTextsLayout from './MainScene/HomeTextsLayout';
 import Foreground from './Foreground/Foreground';
 import ControlsHomeTab from './MainScene/ControlsHomeTab';
-import Helper from './Helper';
+// import Helper from './Helper';
 import OptionsContext from '../../../context/optionsContext';
 
 const ThreejsWrapper = styled.div`
@@ -21,7 +21,9 @@ function Home(props) {
   const ContextBridge = useContextBridge(OptionsContext); //passing context content to 3js app
   const canvasRef = useRef();
   const backgroundRef = useRef();
+  // if pixel ratio equals 1, set it to one, if is greater, set to 2
   const pixelRatio = Math.min(window.devicePixelRatio, 2);
+  // antialiasing isnt nessesery if pixel ratio is greater than one, optimization stuff
   const antialiasing = window.devicePixelRatio > 1 ? 'false' : 'true';
 
   //seting initial time for effects
@@ -60,7 +62,7 @@ function Home(props) {
           />
         </ContextBridge>
       </Canvas>
-      <Helper />
+      {/* <Helper /> */}
     </ThreejsWrapper>
   );
 }

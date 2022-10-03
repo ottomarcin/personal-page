@@ -14,10 +14,7 @@ function Background(props) {
         parallaxControlsPower={props.parallaxControlsPower}
         zPosition={props.zPosition}
       />
-      <BackgroundShaderMaterial
-        initialTime={props.initialTime}
-        zPosition={props.zPosition}
-      />
+      <BackgroundShaderMaterial time={props.time} zPosition={props.zPosition} />
     </mesh>
   );
 }

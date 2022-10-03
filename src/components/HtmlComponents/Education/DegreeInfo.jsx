@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import MoreLessButton from './MoreLessButton';
+import Badge from '../Common/Badge';
+import MoreLessButton from '../Common/MoreLessButton';
 
 const TextWrapper = styled.div`
-  text-shadow: 0px 0px 5px #00000055;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,21 +21,6 @@ const BadgeWrapper = styled.div`
   flex-direction: row;
 `;
 
-const Badge = styled.div`
-  background-color: ${(props) => props.backgroundColor};
-  font-size: 1em;
-  font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.2em 0.5em 0.2em 0.5em;
-  border-radius: 10000px;
-  // box-shadow: 0 0 5px #00000055;
-  margin-right: 0.5em;
-  color: white;
-  text-shadow: none;
-`;
-
 function DegreeInfo({ data }) {
   const [details, setDetails] = useState(false);
 
@@ -44,8 +29,10 @@ function DegreeInfo({ data }) {
   return (
     <TextWrapper>
       <h2 style={{ fontWeight: 600, fontSize: '2em' }}>{data.title}</h2>
-      <h3 style={{ fontWeight: 400 }}>{data.field}</h3>
-      <h3 style={{ fontWeight: 400 }}>{data.university}</h3>
+      {data.field && <h3 style={{ fontWeight: 400 }}>{data.field}</h3>}
+      {data.university && (
+        <h3 style={{ fontWeight: 400 }}>{data.university}</h3>
+      )}
       {details && (
         <div
           style={{
@@ -56,22 +43,29 @@ function DegreeInfo({ data }) {
             marginTop: '1em',
           }}
         >
-          <span
-            style={{ fontWeight: 400, fontSize: '1.1em', fontStyle: 'italic' }}
-          >
-            {data.thesis}
-          </span>
+          {data.thesis && (
+            <span
+              style={{
+                fontWeight: 400,
+                fontSize: '1.1em',
+                fontStyle: 'italic',
+              }}
+            >
+              {data.thesis}
+            </span>
+          )}
           <div style={{ textAlign: 'justify', marginTop: '0.5em' }}>
             {data.description}
           </div>
           <BadgeWrapper>
-            {data.badges.map((badge) => {
-              return (
-                <Badge backgroundColor={badge.color} key={badge.text}>
-                  {badge.text}
-                </Badge>
-              );
-            })}
+            {data.badges &&
+              data.badges.map((badge) => {
+                return (
+                  <Badge color={badge.color} key={badge.text}>
+                    {badge.text}
+                  </Badge>
+                );
+              })}
           </BadgeWrapper>
         </div>
       )}
