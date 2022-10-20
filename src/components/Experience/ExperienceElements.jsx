@@ -84,7 +84,7 @@ function ExperienceElements(props) {
       <Environment files={warehouse_envmap} />
       {/* <OrbitControls /> */}
       <Switch>
-        <Route path='/'>
+        <Route path='/personal-page/'>
           <Home
             backgroundRef={backgroundRef}
             time={time}
@@ -92,16 +92,16 @@ function ExperienceElements(props) {
             mouse={mouse}
           />
         </Route>
-        <Route path='/experience'>
+        <Route path='/personal-page/experience'>
           <WorkExperience />
         </Route>
-        <Route path='/about'>
+        <Route path='/personal-page/about'>
           <AboutMe />
         </Route>
-        <Route path='/education'>
+        <Route path='/personal-page/education'>
           <Education mouse={mouse} />
         </Route>
-        <Route path='/contact'>
+        <Route path='/personal-page/contact'>
           <Contact />
         </Route>
         <Route>

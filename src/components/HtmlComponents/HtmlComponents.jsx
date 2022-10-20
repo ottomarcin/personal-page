@@ -19,19 +19,19 @@ const Wrapper = styled.div`
 function HtmlComponents(props) {
   return (
     <Switch>
-      <Route path='/'>
+      <Route path='/personal-page/'>
         <HomeHtml />
       </Route>
-      <Route path='/about'>
+      <Route path='/personal-page/about'>
         <AboutMeHtml />
       </Route>
-      <Route path='/education'>
+      <Route path='/personal-page/education'>
         <EducationHtml />
       </Route>
-      <Route path='/experience'>
+      <Route path='/personal-page/experience'>
         <ExperienceHtml />
       </Route>
-      <Route path='/contact'>
+      <Route path='/personal-page/contact'>
         <ContactHtml />
       </Route>
     </Switch>
