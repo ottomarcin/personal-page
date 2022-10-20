@@ -3,12 +3,12 @@ export const pages = [
   {
     index: 0,
     text: 'Home',
-    link: '/',
+    link: '/personal-page/',
   },
   {
     index: 1,
     text: 'Education',
-    link: '/education',
+    link: '/personal-page/education',
     randomNumbers: {
       x: Math.random() - 0.5,
       y: Math.random() - 0.5,
@@ -19,7 +19,7 @@ export const pages = [
   {
     index: 2,
     text: 'Experience',
-    link: '/experience',
+    link: '/personal-page/experience',
     randomNumbers: {
       x: Math.random() - 0.5,
       y: Math.random() - 0.5,
@@ -30,7 +30,7 @@ export const pages = [
   {
     index: 3,
     text: 'About Me',
-    link: '/about',
+    link: '/personal-page/about',
     randomNumbers: {
       x: Math.random() - 0.5,
       y: Math.random() - 0.5,
@@ -41,7 +41,7 @@ export const pages = [
   {
     index: 4,
     text: 'Contact',
-    link: '/contact',
+    link: '/personal-page/contact',
     randomNumbers: {
       x: Math.random() - 0.5,
       y: Math.random() - 0.5,
