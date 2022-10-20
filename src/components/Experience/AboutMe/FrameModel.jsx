@@ -5,13 +5,11 @@ import GlassMaterial from '../Common/GlassMaterial';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import useMouseWheel from '../Common/customHooks/useMouseWheel';
+import frameModel from '../../../assets/models/frame.glb';
 
 function FrameModel(props) {
   const ref = useRef();
-  const model = useGLTF(
-    '/models/frame.glb'
-    // 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Suzanne/glTF/Suzanne.gltf'
-  );
+  const model = useGLTF(frameModel);
   // spinning the model when user uses mouse wheel
   const handleWheel = (e) => {
     ref.current.rotation.z -= e.deltaY / 100;

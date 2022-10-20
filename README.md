@@ -1,6 +1,6 @@
 # Overview
 
-Hey, I'm Marcin Otto and welcome to my personal page! Check [live version](http://ottomarcin.github.io/personal-page/) to get to know me or dive into the code. Hope you enjoy it!
+Hey, I'm Marcin Otto and welcome to my personal page! Check [live version](https://ottomarcin.github.io/personal-page) to get to know me or dive into the code. Hope you enjoy it!
 
 ## Techs
 

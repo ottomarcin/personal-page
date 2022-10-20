@@ -4,13 +4,11 @@ import { useRef } from 'react';
 import GlassMaterial from '../Common/GlassMaterial';
 import { useFrame } from '@react-three/fiber';
 import useMouseWheel from '../Common/customHooks/useMouseWheel';
+import hatModel from '../../../assets/models/hat.glb';
 
 function GraduationHatModel(props) {
   const ref = useRef();
-  const model = useGLTF(
-    '/models/hat.glb'
-    // 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Suzanne/glTF/Suzanne.gltf'
-  );
+  const model = useGLTF(hatModel);
 
   // spinning the model when user uses mouse wheel
   const handleWheel = (e) => {

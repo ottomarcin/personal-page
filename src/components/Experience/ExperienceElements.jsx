@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import Background from './Common/Background/Background';
 import Home from './Home/HomeUpdated';
+// using wouter instead of react-router-dom, because of context passing issues to r3f, more: https://spectrum.chat/react-three-fiber/general/clicking-meshes-to-load-other-pages-react-router~3d87ef88-b55f-4a95-b3ca-733480bac833
 import { Switch, Route } from 'wouter';
 import Education from './Education/Education';
 import ControlsHomeTab from './Home/MainScene/ControlsHomeTab';
@@ -11,6 +12,7 @@ import Contact from './Contact/Contact';
 import Error404 from './Error404/Error404';
 import { Environment, OrbitControls } from '@react-three/drei';
 import { isDesktop } from 'react-device-detect';
+import warehouse_envmap from '../../assets/environmentMaps/warehouse/Warehouse-with-lights-brightened.hdr';
 
 function ExperienceElements(props) {
   /**
@@ -74,11 +76,12 @@ function ExperienceElements(props) {
           power={controlsPower}
         />
       )}
-      <Environment
+      {/* <Environment
         files={
           '/environmentMaps/warehouse/Warehouse-with-lights-brightened.hdr'
         }
-      />
+      /> */}
+      <Environment files={warehouse_envmap} />
       {/* <OrbitControls /> */}
       <Switch>
         <Route path='/'>
