@@ -24,7 +24,7 @@ function HomeTextsLayout(props) {
 
   return (
     <>
-      <Flex
+      {/* <Flex
         size={[vpWidth, vpHeight, 100]}
         position={[-vpWidth / 2, vpHeight / 2, 0]}
         // flexDirection={narrow ? 'column' : 'row'}
@@ -50,7 +50,28 @@ function HomeTextsLayout(props) {
             )
           );
         })}
-      </Flex>
+      </Flex> */}
+      {pages.map((page) => {
+        return (
+          // 'home' has to be in navbar, not in scene and it doesnt have randomNumbers property, so chcecking if it exists
+          page.randomNumbers && (
+            // <Box
+            //   key={page.text}
+            //   //this controls if elements are alligned vertically or horizontally (max 2 in row)
+            //   width={narrowScreen ? 'auto' : vpWidth / 2}
+            //   height={narrowScreen ? 'auto' : vpHeight / 2}
+            //   flexShrink={1}
+            //   flexGrow={1}
+            //   centerAnchor
+            // >
+            // <group position={(-0.5 * page.index, 0, -0.5 * page.index)}>
+            <group position={(0, 0, -0.5 * page.index)}>
+              <TextHomeTab data={page} />
+            </group>
+            // </Box>
+          )
+        );
+      })}
     </>
   );
 }

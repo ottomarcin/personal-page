@@ -66,7 +66,7 @@ function Navbar({ header, data }) {
       {/* // i dont want navbar to overlap threejs canvas */}
       {/* <NavbarWrapper>
         <NavigationBar> */}
-      <Header href={'/'} onClick={closeMobileMenu}>
+      <Header href={'/personal-page/'} onClick={closeMobileMenu}>
         {header}
       </Header>
       <Menu
