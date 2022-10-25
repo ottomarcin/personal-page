@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/personal-page/static/css/main.f2945044.css",
-    "main.js": "/personal-page/static/js/main.a2cd7b65.js",
+    "main.css": "/personal-page/static/css/main.cf331686.css",
+    "main.js": "/personal-page/static/js/main.faaa32cc.js",
     "static/media/Warehouse-with-lights-brightened.hdr": "/personal-page/static/media/Warehouse-with-lights-brightened.450477d12848ab8923c5.hdr",
     "static/media/phone.glb": "/personal-page/static/media/phone.7d8655ddcaccc8f8bad2.glb",
     "static/media/computer-merged.glb": "/personal-page/static/media/computer-merged.f1de25fecea336d38cf4.glb",
     "static/media/frame.glb": "/personal-page/static/media/frame.cce12427aca4f2eb4398.glb",
     "static/media/hat.glb": "/personal-page/static/media/hat.de370c96e1ff9fee0ec1.glb",
     "index.html": "/personal-page/index.html",
-    "main.f2945044.css.map": "/personal-page/static/css/main.f2945044.css.map",
-    "main.a2cd7b65.js.map": "/personal-page/static/js/main.a2cd7b65.js.map"
+    "main.cf331686.css.map": "/personal-page/static/css/main.cf331686.css.map",
+    "main.faaa32cc.js.map": "/personal-page/static/js/main.faaa32cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2945044.css",
-    "static/js/main.a2cd7b65.js"
+    "static/css/main.cf331686.css",
+    "static/js/main.faaa32cc.js"
   ]
 }
