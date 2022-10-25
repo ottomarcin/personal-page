@@ -72,10 +72,10 @@ const MobileCommunicate = styled.div`
   max-width: 80%;
   position: absolute;
   bottom: 1em;
-  color: white;
+  color: #ffffffaa;
   left: 50%;
   transform: translateX(-50%);
-  border: 2px solid white;
+  // border: 2px solid white;
   align-self: flex-end;
   font-size: 0.4em;
   padding: 0.5em;

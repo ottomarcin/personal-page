@@ -1,11 +1,12 @@
 import { Canvas } from '@react-three/fiber';
-import React from 'react';
+import React, { Suspense } from 'react';
 // eslint-disable-next-line
-import { OrbitControls, useContextBridge } from '@react-three/drei';
+import { OrbitControls, useContextBridge, Loader } from '@react-three/drei';
 import ExperienceElements from './ExperienceElements';
 import styled from 'styled-components';
 import * as THREE from 'three';
 import OptionsContext from '../../context/optionsContext';
+// import Loader from './Loader';
 
 // the idea is to have one threejs file - experience - and make routing here
 // and second for html stuff
@@ -21,7 +22,7 @@ function Experience(props) {
   const ContextBridge = useContextBridge(OptionsContext); //passing context content to 3js app
   // if pixel ratio equals 1, set it to one, if is greater, set to 2
   const pixelRatio = Math.min(window.devicePixelRatio, 2);
-  // antialiasing isnt nessesery if pixel ratio is greater than one, optimization stuff
+  // antialiasing isnt necessary if pixel ratio is greater than one, optimization stuff
   const antialiasing = window.devicePixelRatio > 1 ? 'false' : 'true';
 
   return (
@@ -37,12 +38,15 @@ function Experience(props) {
         camera={{ position: [0, 0, 5], fov: 30 }}
         antialiasing={antialiasing}
       >
-        <ContextBridge>
-          {/* in order to use r3f hooks i had to break this component down to another one */}
-          {/* experience routing also in ExperienceElements */}
-          <ExperienceElements />
-        </ContextBridge>
+        <Suspense fallback={null}>
+          <ContextBridge>
+            {/* in order to use r3f hooks i had to break this component down to another one */}
+            {/* experience routing also in ExperienceElements */}
+            <ExperienceElements />
+          </ContextBridge>
+        </Suspense>
       </Canvas>
+      <Loader />
     </ThreejsWrapper>
   );
 }

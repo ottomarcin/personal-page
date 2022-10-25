@@ -4,7 +4,13 @@
   padding: 0;
   font-family: 'Lato', sans-serif;
   /* not letting browsers on mac/ios to 'overscroll' */
-  overscroll-behavior-y: none;
+  xoverscroll-behavior-y: none;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overscroll-behavior: none;
 }
 
 .main {

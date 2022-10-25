@@ -13,14 +13,22 @@ const experienceCopies = [
     ],
   },
   {
-    position: 'Math / Physics tutor',
+    position: 'Math tutor',
     employer: 'Private clients',
     time: '2019-2021',
     description: `Teaching and preparing people for their exams gave me much joy (and money 😅) during my time at the university.`,
   },
   {
-    position: 'CNC machine programmer / operator',
-    employer: 'STr Shipping and Trading',
+    position: 'Mechanical Design Engineer (Intern)',
+    employer: 'Carbon Fox',
+    time: '03.2019-04.2019',
+    description: `During two months internship I have designed various parts of special purpose vehicle using Solidworks CAD software.`,
+    badges: [{ text: 'Solidworks', color: '#c83c2b' }],
+  },
+
+  {
+    position: 'CNC machine programmer operator',
+    employer: 'STr Production',
     time: '2016-2019',
     description: `This experience gave me much satisfaction in machining on lathes and milling machines workpieces with precision up to one hundredth of millimeter. During these years I’ve worked with machines ran by SIEMENS Sinumeric and Heidenhein software manufactured by leading companies such as DMG-Mori.`,
     badges: [

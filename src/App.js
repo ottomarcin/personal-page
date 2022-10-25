@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import styled from 'styled-components';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { pages } from './components/pages/pages';
 import OptionsContext from './context/optionsContext';
 import Experience from './components/Experience/Experience';
@@ -21,9 +21,11 @@ function App() {
     // providing pages to navigate
     <OptionsContext.Provider value={{ pages: pages }}>
       <AppWrapper>
-        <Navbar header={'Marcin Otto'} data={pagesInOrder} />
-        <Experience />
-        <HtmlComponents />
+        <Suspense fallback={null}>
+          <Navbar header={'Marcin Otto'} data={pagesInOrder} />
+          <Experience />
+          <HtmlComponents />
+        </Suspense>
       </AppWrapper>
     </OptionsContext.Provider>
   );
